@@ -48,9 +48,38 @@
 //     num = prompt("Ededi daxil edin")
 // }
 
-for (let i = 0; i < 40; i++) {
-    if( i % 2 == 1){
-        continue;
-    } 
-    console.log(i)
+// for (let i = 0; i < 40; i++) {
+//     if( i % 2 == 1){
+//         continue;
+//     } 
+//     console.log(i)
+// }
+
+
+// var eded = 71;
+
+// var teklik = eded % 10;
+// eded = (eded - teklik)/10;
+// var eks = teklik*10+eded;
+// console.log(eks);
+
+
+
+//var num = 2023;
+//var eks = 0;
+//var teklik = num % 10 = 3; num = (num-teklik) / 10 = 202; eks = eks * 10 + teklik = 3;
+//teklik = num % 10 = 2; num = (num - teklik) / 10 = 20; eks = eks * 10 + teklik = 32;
+//teklik = num % 10 = 0; num = (num - teklik) / 10 = 2; eks = eks*10+teklik = 320;
+//teklik = num % 10 = 2; num = (num - teklik) / 10 = 0; eks = eks *10 + teklik = 3202;
+
+var num = prompt();
+var teklik = num % 10;
+var eks = teklik;
+
+while(num > 9){
+    num = (num - teklik) / 10;
+    teklik = num % 10;
+    eks = eks * 10 + teklik;
 }
+
+console.log(eks);
