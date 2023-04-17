@@ -83,6 +83,7 @@ var swp201 = [
     }
 ];
 var result = "";
+
 for (let i = 0; i < swp201.length; i++) {
     result += `<div style="height:100%;" class="col-md-4">
     <div class="card">
@@ -96,4 +97,18 @@ for (let i = 0; i < swp201.length; i++) {
     </div>
 </div>`;
 }
+
+// swp201.forEach((item)=>{
+//     result += `<div style="height:100%;" class="col-md-4">
+//     <div class="card">
+//         <div class="card-header">
+//             ${item.name} ${item.surname}
+//         </div>
+//         <div class="card-body">
+//             <img class="w-100" src="./assets/imgs/${item.img}" alt="">
+//             <p>${item.status}</p>
+//         </div>
+//     </div>
+// </div>`;
+// })
 area.innerHTML = result;
