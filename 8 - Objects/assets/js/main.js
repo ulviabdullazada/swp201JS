@@ -78,11 +78,40 @@
 // console.log(std1);
 // console.log(std2);
 
-let obj = {
-    arr : [],
-    add : function(num){
+// let obj = {
+//     arr : [],
+//     add : function(num){
 
+//     }
+// }
+// obj.add(7)
+// console.log(obj.arr);
+
+
+// var myArr = {
+//     arr: [],
+//     add: function(x){
+//         return this.arr[this.arr.length++] = x;
+//     }
+// }
+
+// myArr.add(12);
+// myArr.add(23);
+// myArr.add(34);
+
+// console.log(myArr);
+
+function MyArr(){
+    this.arr = Object.create();
+    this.add = function(x){
+        return this.arr[this.arr.length++] = x;
     }
 }
-obj.add(7)
-console.log(obj.arr);
+
+var newArr = new MyArr();
+
+newArr.add("Tural");
+newArr.add("Nurlan");
+newArr.add("Sevinc");
+
+console.log(newArr);
