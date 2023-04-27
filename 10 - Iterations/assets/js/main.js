@@ -1,97 +1,71 @@
-// let stds = ["Aytekin", "Anar","Nilufer","Zehra","Leman","Elnare", "Eli","Memmedeli","Zehra"]
-// let nums = [123,11,50,23,9,12]
-
-// console.log(stds.reverse().find(x=> x.includes("a")));
-
-
-
-
+let nums = [6,91,3,-56,3,0,22,-3];
+let stds = [
+    {name:"Emil",age:20}, 
+    {name:"Ruslan", isMarried:false}, 
+    {name:"Elvin",age:22, surname:"Ibragimov"}
+];
 
 
 
-
-
-
-// console.log(nums.some(val=>val % 2 == 0));
-
-// console.log(stds.filter(val => val.toLowerCase().includes("el")).length);
-
-// console.log(stds.filter(val => val.toLowerCase().includes("eli")));
-// let res = nums.filter(val => val % 3 == 0);
-
-// // console.log(nums.reduce((total, value)=>total+value));
-
-// console.log(nums.filter(val => val % 3 == 0).map(val=>val / 3))
-// console.log(res.map(val=>val / 3))
-// console.log(nums.filter(val => val % 5 == 0))
-
-// console.log(stds.map((val)=> val.slice(0,3)));
-
-// console.log(nums);
-// console.log(nums.map((val, ind) => {
-//     return val%2==0?"cutdur":"tekdir"
-// }));
-
-// console.log(stds);
-
-// stds.forEach((value, index) => {
-//     console.log(value + " " + index)
-// });
-
-// for (let i = 0; i < stds.length; i++) {
-//     console.log(stds[i]);
-// }
-
-// function writeConsole(text) {
-//     console.log(text);
-// }
-
-// let writeCon = function (value){
-//     console.log(value);
-// }
-
-// value => console.log(value)
-
-// for (let j = 0; j < stds[i].length; j++) {
-//     console.log(stds[i][j]);
-// }
-// let mat = [[1,2],[10,20]];
-// console.log(mat[1][0]);
-
-var stu = {
-    name: "Yunis",
-    surname: "Qarayev",
-    age:21
-}
-
-var stu1 = {
-    name: " Anar",
-    surname: "Balizade",
-    age:21
-}
-
-var stu2 = {
-    name: "Zehra",
-    surname: "Mehdizade",
-    age:21
+for (const elem of stds) {
+    for (const key in elem) {
+        console.log(key + " : "+elem[key]);
+    }
 }
 
 
 
-// console.log(array1)
-for (const i in stu) {
- console.log(i)
-}
 
-const array1 = [stu];
-for (const i of array1) {
-    console.log(i)
-}
 
-// console.log(stu)
 
-// const array1 = ['a', 'b', 'c'];
 
-// for (const i of stu) {
-//     console.log(i)
+
+
+// console.log(Array.from("Salam xanim"))
+// console.log("Salam xaam. Tanis olmaq olarmi?".split(" "))
+
+// console.log(stds.reverse().find(s=>s.name.startsWith("E")));
+// console.log(stds.indexOf({name:"Emil", age:20}));
+
+// console.log(nums.some(n=> n > 0));
+// console.log(nums.reduce((total, val)=> total +val)/nums.length);
+// console.log(nums.filter(n => n > 0).map(n=>n*2).reduce((t, v)=>t+v));
+
+// let names = ["Emil", "Elvin","Sevinc","Eli","Ruslan","Tural", "Veli", "Mehemmedeli"]
+// console.log(names.filter(n=>n.toLowerCase().includes("eli")));
+// console.log(stds.filter(s=>s.name.startsWith("E")));
+// let count = 0;
+// for (let i = 0; i < names.length; i++) {
+//     // const element = ;
+//     if (names[i].toLowerCase().includes("Eli")) {
+//         count++;
+//     }
 // }
+// console.log(count);
+
+// console.log(stds.map(val => val.name.toLowerCase().slice(1,3)));
+
+// function map(arr, callBackFn){
+//     for (let index = 0; index < array.length; index++) {
+//         callBackFn(arr[index], index, arr)        
+//     }
+// }
+
+// for (let i = 0; i < nums.length; i++) {
+//     console.log(nums[i]);    
+// }
+
+// nums.forEach((val, ind) => console.log(val+ " - " + ind));
+
+//1. value
+//2. index
+//3. array
+
+// function write2Console(val) {
+//     console.log(val);
+// }
+// function (x){
+//     console.log(x);
+// }
+
+
