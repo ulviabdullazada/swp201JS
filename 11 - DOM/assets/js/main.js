@@ -36,21 +36,37 @@
 const inp = document.querySelector("input");
 const ul = document.getElementById("list");
 const btn = document.getElementById("btn");
+const deleteBtn = document.getElementById("deleteBtn");
 let stdns = [];
 // console.log(inp.value);
 // addBtn();
+// includes();
 btn.onclick = e=>{
     e.preventDefault();
     if (inp.value.trim() != '') {
-        stdns.push(inp.value.trim());
-        inp.value = "";
-        fillList();
+        if(stdns.includes(inp.value.trim()) === false){
+            stdns.push(inp.value.trim());
+            inp.value = "";
+            fillList();
+        }
+
+        else{
+            alert("Bu adda istifadeci var!");
+        }
     }
     else{
         alert("Nese daxil et");
     }
 }
+deleteBtn.onclick = e=>{
+    e.preventDefault();
+    deleteList()
+    fillList()
+}
 
 function fillList() {
     ul.innerHTML = stdns.reduce((total, val)=> total + `<li class="list-group-item">${val}</li>`,'');
 }
+function deleteList(){
+    stdns.pop()
+} 
