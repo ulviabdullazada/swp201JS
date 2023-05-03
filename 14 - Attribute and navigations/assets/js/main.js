@@ -49,11 +49,13 @@ function changeImg(el){
     let thisImgSrc = el.getAttribute("src");
     mainImg.setAttribute("src", thisImgSrc);
 }
+
 function nextImg(){
     const mainImg = document.querySelector('.row-2 img');
     let activeImg = document.querySelector('.row img[src="'+mainImg.src+'"]');
     changeImg(activeImg.nextElementSibling);
 }
+
 function prevImg(){
     const mainImg = document.querySelector('.row-2 img');
     let activeImg = document.querySelector('.row img[src="'+mainImg.src+'"]');
