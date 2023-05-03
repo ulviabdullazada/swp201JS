@@ -1,0 +1,29 @@
+.py-5{
+    padding: 5% 0;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.row .s8{
+    margin-left: 0 !important;
+}
+.material-icons{
+    font-size: 20px;
+    float:right;
+    cursor: pointer;
+}
+.row-2 > img{
+    width: 35%;
+}
+.row img{
+    width: 20%;
+    cursor: pointer;
+}
+.row-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
