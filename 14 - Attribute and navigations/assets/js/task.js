@@ -5,3 +5,6 @@ div.onclick = () => {
     div.style.width = px + "px";
     div.style.height = px + "px";
 }
+function changeDivColor(){
+    div.style.backgroundColor = inp.value;
+}

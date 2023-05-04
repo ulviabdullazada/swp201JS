@@ -49,15 +49,19 @@ function changeImg(el){
     let thisImgSrc = el.getAttribute("src");
     mainImg.setAttribute("src", thisImgSrc);
 }
-
+const rowDiv = document.querySelector('.row');
+const mainImg = document.querySelector('.row-2 img');
 function nextImg(){
-    const mainImg = document.querySelector('.row-2 img');
     let activeImg = document.querySelector('.row img[src="'+mainImg.src+'"]');
-    changeImg(activeImg.nextElementSibling);
+    activeImg == rowDiv.lastElementChild ? changeImg(rowDiv.firstElementChild) : changeImg(activeImg.nextElementSibling); 
 }
 
 function prevImg(){
-    const mainImg = document.querySelector('.row-2 img');
     let activeImg = document.querySelector('.row img[src="'+mainImg.src+'"]');
-    changeImg(activeImg.previousElementSibling);
+    if (activeImg == rowDiv.firstElementChild) {
+        changeImg(rowDiv.lastElementChild);
+    }
+    else{
+        changeImg(activeImg.previousElementSibling);
+    }
 }
