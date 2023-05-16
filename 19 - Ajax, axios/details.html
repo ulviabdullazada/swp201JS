@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/percircle.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img style="width: 100%;" src="" class="pokemon-img">
+            </div>
+            <div class="col-8">
+                <h2 class="pokemon-name text-center"></h2>
+                <div class="dark-area stat-area clearfix row container">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="./assets/js/percircle.js"></script>
+    <script>
+        const pokemonId = window.location.search.substring(4)
+        $.ajax({
+            method: 'GET',
+            url: "https://pokeapi.co/api/v2/pokemon/" + pokemonId,
+            success: function (res) {
+                $(".pokemon-img").attr('src', res.sprites.other["official-artwork"].front_default)
+                $(".pokemon-name").text(res.name);
+                res.stats.forEach(st=>{
+                    $('.stat-area').append(
+                        `<div class="clearfix col-6">
+                            <p style="width:40%;text-align:center">${st.stat.name}</p>
+                            <div data-percent="37" class="percircle animate"><span style="">${st.base_stat}%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>`)
+                })
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    </script>
+</body>
+
+</html>

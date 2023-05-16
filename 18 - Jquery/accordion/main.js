@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.accordion').each(() => {
         $(this).click(function(){
-            $(this).next().toggleClass('d-none')
+            $('.accordion').next().toggleClass('d-none')
         })
     });
 })
