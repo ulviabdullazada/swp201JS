@@ -18,7 +18,7 @@ fetched.then(res => res.json())
 .then(data => data.filter(d => d.name.includes('le')))
 .then(data=>{
     data.forEach(d=>{
-        list.innerHTML += '<button id='${d.id}>' + d.name + '</button>'
+        list.innerHTML += '<button>' + d.name + '</button>'
     })
 })
 .catch(e=>alert('Problem var'))
