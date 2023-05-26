@@ -25,41 +25,41 @@ fetched.then(res => res.json())
 
 
 // BASKET
-// function BasketItem(id,count){
-//     this.Id = id;
-//     this.Count = count;
-// }
+function BasketItem(id,count){
+    this.Id = id;
+    this.Count = count;
+}
 
-// let btns = document.querySelectorAll(".btn");
+let btns = document.querySelectorAll(".btn");
 
-// btns.forEach(btn=>{
-//     btn.addEventListener("click",function(){
-//         let dataId = Number(this.parentNode.parentNode.getAttribute("data-id"));
-//         console.log(dataId)
+btns.forEach(btn=>{
+    btn.addEventListener("click",function(){
+        let dataId = Number(this.parentNode.parentNode.getAttribute("data-id"));
+        console.log(dataId)
 
-//         let basket = localStorage.getItem("basket")
-//         if(!basket){
-//             basket = []
-//         }
-//         else{
-//             basket = JSON.parse(basket)
-//         }
+        let basket = localStorage.getItem("basket")
+        if(!basket){
+            basket = []
+        }
+        else{
+            basket = JSON.parse(basket)
+        }
         
-//         let basketItem = basket.find(bi=>bi.Id == dataId)
+        let basketItem = basket.find(bi=>bi.Id == dataId)
 
-//         if(!basketItem){
-//             basketItem = new BasketItem(dataId,1)
-//             basket.push(basketItem);
-//         }
-//         else{
-//             basketItem.Count++;
-//         }
+        if(!basketItem){
+            basketItem = new BasketItem(dataId,1)
+            basket.push(basketItem);
+        }
+        else{
+            basketItem.Count++;
+        }
 
-//         localStorage.setItem("basket",JSON.stringify(basket))
+        localStorage.setItem("basket",JSON.stringify(basket))
 
-//         let badge = document.querySelector(".badge")
+        let badge = document.querySelector(".badge")
 
-//         badge.innerHTML = basket.length
+        badge.innerHTML = basket.length
 
-//     })
-// })
+    })
+})
